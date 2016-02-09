@@ -3,6 +3,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -68,16 +70,29 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vDx-yh-2bN">
+                                <rect key="frame" x="109" y="60" width="413" height="354"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="vDx-yh-2bN" secondAttribute="height" multiplier="613:420" id="3FX-9G-gxU"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="win"/>
+                                <connections>
+                                    <action selector="tapWinButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9xV-Xh-TU0"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="a0v-I9-XXw" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="0aN-OU-Hd3"/>
                             <constraint firstItem="PjH-I5-B9p" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="1Da-2Q-gcP"/>
+                            <constraint firstItem="vDx-yh-2bN" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="2Vg-rF-HHL"/>
                             <constraint firstItem="Lwb-Iv-lt7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="418-xv-aUG"/>
+                            <constraint firstItem="vDx-yh-2bN" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="80" id="56Q-kG-jAX"/>
                             <constraint firstItem="81W-gz-0yT" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="5z0-hS-USk"/>
                             <constraint firstItem="a0v-I9-XXw" firstAttribute="top" secondItem="Lwb-Iv-lt7" secondAttribute="bottom" constant="20" id="73k-Mj-spp"/>
                             <constraint firstItem="RMX-ZI-ffR" firstAttribute="top" secondItem="PjH-I5-B9p" secondAttribute="bottom" constant="50" id="8Yv-Sq-PgT"/>
                             <constraint firstItem="RMX-ZI-ffR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="984-pn-O1u"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="vDx-yh-2bN" secondAttribute="trailing" id="Be6-KX-3Nv"/>
                             <constraint firstItem="81W-gz-0yT" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="60" id="Co1-Fq-wm7"/>
                             <constraint firstItem="vV1-DI-F7J" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="D3Z-su-2s5"/>
                             <constraint firstAttribute="trailing" secondItem="vV1-DI-F7J" secondAttribute="trailing" id="ICv-xE-hk2"/>
@@ -86,9 +101,11 @@
                             <constraint firstItem="PjH-I5-B9p" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="70" id="QSQ-nF-27X"/>
                             <constraint firstItem="vV1-DI-F7J" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="RwQ-UQ-TDz"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="vV1-DI-F7J" secondAttribute="bottom" id="kcK-3r-wMQ"/>
+                            <constraint firstItem="vDx-yh-2bN" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="uMv-8A-n7h"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="56Q-kG-jAX"/>
                                 <exclude reference="418-xv-aUG"/>
                             </mask>
                         </variation>
@@ -99,6 +116,7 @@
                         <outlet property="tapBtn" destination="PjH-I5-B9p" id="ZfI-El-e6P"/>
                         <outlet property="tapEntryTxt" destination="Lwb-Iv-lt7" id="Rb2-yn-FzQ"/>
                         <outlet property="tapsLbl" destination="RMX-ZI-ffR" id="NJr-55-YS9"/>
+                        <outlet property="winBtn" destination="vDx-yh-2bN" id="PE7-VF-3vj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -111,5 +129,6 @@
         <image name="coin" width="244" height="268"/>
         <image name="playbtn" width="356" height="175"/>
         <image name="retrobg" width="800" height="800"/>
+        <image name="win" width="559" height="420"/>
     </resources>
 </document>

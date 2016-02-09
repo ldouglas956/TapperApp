@@ -14,8 +14,6 @@ class ViewController: UIViewController {
 	var maxTaps = 0
 	var currentTaps = 0
 	
-	
-	
 	// Outlets
 	@IBOutlet weak var logoImg: UIImageView!
 	@IBOutlet weak var tapEntryTxt: UITextField!
@@ -23,7 +21,9 @@ class ViewController: UIViewController {
 	
 	@IBOutlet weak var tapBtn: UIButton!
 	@IBOutlet weak var tapsLbl: UILabel!
+	@IBOutlet weak var winBtn: UIButton!
 	
+	// Actions
 	@IBAction func onPlayBtnPressed(sender: UIButton!) {
 		
 		if tapEntryTxt.text  != nil && tapEntryTxt.text != "" {
@@ -45,10 +45,20 @@ class ViewController: UIViewController {
 		currentTaps++
 		updateTapsLabel()
 		if isGameOver() {
-			restartGame()
+			logoImg.hidden = true
+			tapEntryTxt.hidden = true
+			playBtn.hidden = true
+			tapBtn.hidden = true
+			tapsLbl.hidden = true
+			winBtn.hidden = false
 		}
 	}
 	
+	@IBAction func tapWinButton(sender: UIButton!) {
+		restartGame()
+	}
+	
+	// Functions
 	func updateTapsLabel() {
 			tapsLbl.text = "\(currentTaps) Taps"
 	}
@@ -69,6 +79,7 @@ class ViewController: UIViewController {
 		playBtn.hidden = false
 		tapBtn.hidden = true
 		tapsLbl.hidden = true
+		winBtn.hidden = true
 	}
 	
 
